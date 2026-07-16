@@ -74,7 +74,7 @@
                                 @unless(auth()->user()->hasRole('admin'))
                                     <div class="px-4 py-2 text-xs text-zinc-500 border-b border-zinc-100 mb-1">
                                         <span class="block mb-1">Status Verifikasi:</span>
-                                        @if(auth()->user()->status === 'verified' || auth()->user()->status === 'approved')
+                                        @if(auth()->user()->status === 'active' || auth()->user()->status === 'approved')
                                             <span class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-1 text-xs font-semibold text-emerald-600">
                                                 <svg class="size-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                                                 Diterima
