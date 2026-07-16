@@ -494,47 +494,6 @@ php artisan about
 
 ---
 
-## 🧪 Testing
-
-Proyek ini menggunakan **Pest** sebagai framework testing.
-
-### Menjalankan Test
-
-```bash
-# Jalankan semua test
-php artisan test --compact
-
-# Jalankan test dengan filter nama
-php artisan test --compact --filter=NamaTest
-
-# Jalankan file test spesifik
-php artisan test --compact tests/Feature/NamaTest.php
-```
-
-### CI Full Check (Lint + Static Analysis + Test)
-
-```bash
-composer run test
-```
-
-Perintah ini mencakup:
-1. **Laravel Pint** — Cek format kode PHP
-2. **Larastan / PHPStan** — Analisis statis tipe data
-3. **Pest** — Jalankan seluruh test suite
-
-### Code Formatting
-
-```bash
-# Format semua file PHP yang dimodifikasi
-vendor/bin/pint --dirty
-
-# Cek format tanpa mengubah file
-vendor/bin/pint --test
-```
-
-
-
-
 <div align="center">
   <p>Dibuat dengan ❤️ menggunakan <strong>Laravel</strong> + <strong>Livewire</strong></p>
   <p><strong>Sistem Reservasi Perpustakaan</strong> &copy; 2026</p>
