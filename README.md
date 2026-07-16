@@ -212,7 +212,7 @@ Berikut adalah variabel environment penting di file `.env`:
 # ========================
 # Konfigurasi Aplikasi
 # ========================
-APP_NAME="Sistem Reservasi Perpustakaan"
+APP_NAME="NoireeLibrary"
 APP_ENV=local          # local | staging | production
 APP_KEY=               # Di-generate otomatis oleh artisan key:generate
 APP_DEBUG=true         # Ubah ke false di production
@@ -491,74 +491,6 @@ php artisan pail
 # Static analysis
 php artisan about
 ```
-
----
-
-## 🧪 Testing
-
-Proyek ini menggunakan **Pest** sebagai framework testing.
-
-### Menjalankan Test
-
-```bash
-# Jalankan semua test
-php artisan test --compact
-
-# Jalankan test dengan filter nama
-php artisan test --compact --filter=NamaTest
-
-# Jalankan file test spesifik
-php artisan test --compact tests/Feature/NamaTest.php
-```
-
-### CI Full Check (Lint + Static Analysis + Test)
-
-```bash
-composer run test
-```
-
-Perintah ini mencakup:
-1. **Laravel Pint** — Cek format kode PHP
-2. **Larastan / PHPStan** — Analisis statis tipe data
-3. **Pest** — Jalankan seluruh test suite
-
-### Code Formatting
-
-```bash
-# Format semua file PHP yang dimodifikasi
-vendor/bin/pint --dirty
-
-# Cek format tanpa mengubah file
-vendor/bin/pint --test
-```
-
----
-
-## 📊 Variabel Environment Lengkap
-
-| Variabel | Default | Deskripsi |
-|---|---|---|
-| `APP_NAME` | `Laravel` | Nama aplikasi |
-| `APP_ENV` | `local` | Environment (`local`/`production`) |
-| `APP_KEY` | *(kosong)* | Kunci enkripsi (di-generate otomatis) |
-| `APP_DEBUG` | `true` | Mode debug |
-| `APP_URL` | `http://localhost` | URL aplikasi |
-| `DB_CONNECTION` | `sqlite` | Driver database |
-| `DB_HOST` | `127.0.0.1` | Host database (MySQL) |
-| `DB_PORT` | `3306` | Port database (MySQL) |
-| `DB_DATABASE` | *(nama db)* | Nama database |
-| `DB_USERNAME` | `root` | Username database |
-| `DB_PASSWORD` | *(kosong)* | Password database |
-| `SESSION_DRIVER` | `database` | Driver session |
-| `QUEUE_CONNECTION` | `database` | Driver queue |
-| `CACHE_STORE` | `database` | Driver cache |
-| `MAIL_MAILER` | `log` | Driver email |
-
----
-
-## 📜 Lisensi
-
-Proyek ini dilisensikan di bawah [MIT License](https://opensource.org/licenses/MIT).
 
 ---
 
