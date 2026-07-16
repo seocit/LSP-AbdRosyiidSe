@@ -1,38 +1,50 @@
 {{-- Landing Page - Perpustakaan --}}
 <div>
     {{-- ===== HERO SECTION ===== --}}
-    <section class="relative overflow-hidden bg-gradient-to-br from-maroon via-maroon to-[#4a1a1a] py-24 md:py-32">
+    <section class="relative overflow-hidden py-16 md:py-24 lg:py-24">
+
+        {{-- Video Background --}}
+        <div class="absolute inset-0 z-0">
+            <video autoplay loop muted playsinline class="h-full w-full object-cover">
+                {{-- Gunakan URL video library atau buku (Contoh dari Mixkit) --}}
+                <source src="{{ asset('videos/hero.mp4') }}" type="video/mp4">
+            </video>
+            {{-- Dark Overlay for readability --}}
+            <div class="absolute inset-0 bg-black/60"></div>
+            {{-- Gradient overlay for styling matching theme --}}
+            <div class="absolute inset-0 bg-gradient-to-br from-maroon/70 to-[#4a1a1a]/70"></div>
+        </div>
 
         {{-- Decorative background --}}
-        <div class="pointer-events-none absolute inset-0 overflow-hidden">
-            <div class="absolute -right-32 -top-32 size-96 rounded-full bg-brass/10 blur-3xl"></div>
-            <div class="absolute -bottom-20 -left-20 size-80 rounded-full bg-brass/5 blur-3xl"></div>
-            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5">
+        <div class="pointer-events-none absolute inset-0 z-0 overflow-hidden mix-blend-overlay opacity-30">
+            <div class="absolute -right-32 -top-32 size-96 rounded-full bg-brass blur-3xl"></div>
+            <div class="absolute -bottom-20 -left-20 size-80 rounded-full bg-brass blur-3xl"></div>
+            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20">
                 <svg class="w-[600px]" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                 </svg>
             </div>
         </div>
 
-        <div class="relative mx-auto max-w-7xl px-6 text-center">
+        <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 text-center">
             <div data-aos="fade-down" data-aos-delay="100">
                 <span class="mb-4 inline-block rounded-full border border-brass/30 bg-brass/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brass">
                     Perpustakaan Digital
                 </span>
             </div>
 
-            <h1 class="font-display text-4xl font-bold text-paper md:text-6xl lg:text-7xl" data-aos="fade-up" data-aos-delay="200">
+            <h1 class="font-display text-3xl font-bold text-paper sm:text-4xl md:text-5xl lg:text-7xl" data-aos="fade-up" data-aos-delay="200">
                 Temukan Buku<br>
                 <span class="text-brass">Impianmu</span> di Sini
             </h1>
-            <p class="mx-auto mt-6 max-w-2xl text-lg text-paper/70" data-aos="fade-up" data-aos-delay="300">
+            <p class="mx-auto mt-4 max-w-2xl text-sm sm:text-base lg:text-lg text-paper/70 px-2" data-aos="fade-up" data-aos-delay="300">
                 Jelajahi ribuan koleksi buku kami. Daftar sebagai anggota dan mulai perjalanan literasimu hari ini secara gratis.
             </p>
 
-            <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row" data-aos="fade-up" data-aos-delay="400">
+            <div class="mt-8 flex flex-col items-stretch justify-center gap-3 px-4 sm:flex-row sm:items-center sm:px-0" data-aos="fade-up" data-aos-delay="400">
                 @guest
                     <a href="{{ route('register') }}"
-                        class="inline-flex items-center gap-2 rounded-xl bg-brass px-8 py-3.5 text-base font-semibold text-ink shadow-lg transition hover:bg-brass/90 hover:shadow-brass/30"
+                        class="inline-flex items-center justify-center gap-2 rounded-xl bg-brass px-6 py-3.5 text-sm sm:text-base font-semibold text-ink shadow-lg transition hover:bg-brass/90 hover:shadow-brass/30"
                         wire:navigate>
                         Daftar Sekarang
                         <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -40,7 +52,7 @@
                         </svg>
                     </a>
                     <a href="{{ route('login') }}"
-                        class="inline-flex items-center gap-2 rounded-xl border border-paper/30 px-8 py-3.5 text-base font-medium text-paper transition hover:bg-white/10"
+                        class="inline-flex items-center justify-center gap-2 rounded-xl border border-paper/30 px-6 py-3.5 text-sm sm:text-base font-medium text-paper transition hover:bg-white/10"
                         wire:navigate>
                         Sudah Punya Akun? Masuk
                     </a>
@@ -61,18 +73,18 @@
             </div>
 
             {{-- Stats --}}
-            <div class="mt-16 grid grid-cols-3 gap-6 border-t border-white/10 pt-12 md:grid-cols-3" data-aos="fade-up" data-aos-delay="500">
+            <div class="mt-10 sm:mt-16 grid grid-cols-3 gap-3 sm:gap-6 border-t border-white/10 pt-8 sm:pt-12" data-aos="fade-up" data-aos-delay="500">
                 <div class="text-center">
-                    <div class="font-display text-3xl font-bold text-brass">1000+</div>
-                    <div class="mt-1 text-sm text-paper/60">Koleksi Buku</div>
+                    <div class="font-display text-2xl sm:text-3xl font-bold text-brass">1000+</div>
+                    <div class="mt-1 text-xs sm:text-sm text-paper/60">Koleksi Buku</div>
                 </div>
                 <div class="text-center">
-                    <div class="font-display text-3xl font-bold text-brass">50+</div>
-                    <div class="mt-1 text-sm text-paper/60">Kategori</div>
+                    <div class="font-display text-2xl sm:text-3xl font-bold text-brass">50+</div>
+                    <div class="mt-1 text-xs sm:text-sm text-paper/60">Kategori</div>
                 </div>
                 <div class="text-center">
-                    <div class="font-display text-3xl font-bold text-brass">500+</div>
-                    <div class="mt-1 text-sm text-paper/60">Anggota Aktif</div>
+                    <div class="font-display text-2xl sm:text-3xl font-bold text-brass">500+</div>
+                    <div class="mt-1 text-xs sm:text-sm text-paper/60">Anggota Aktif</div>
                 </div>
             </div>
         </div>
@@ -80,7 +92,7 @@
 
     {{-- ===== KATALOG BUKU ===== --}}
     <section class="py-20">
-        <div class="mx-auto max-w-7xl px-6">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6">
             <div class="mb-12 text-center" data-aos="fade-up">
                 <span class="mb-2 inline-block text-xs font-semibold uppercase tracking-widest text-brass">Koleksi</span>
                 <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">Buku Tersedia</h2>
@@ -99,7 +111,7 @@
                         class="w-full rounded-xl border border-zinc-200 bg-white py-3 pl-10 pr-4 text-sm text-zinc-700 shadow-sm transition focus:border-maroon focus:outline-none focus:ring-2 focus:ring-maroon/20">
                 </div>
                 <select wire:model.live="categoryFilter" id="category-filter-home"
-                    class="rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-700 shadow-sm focus:border-maroon focus:outline-none focus:ring-2 focus:ring-maroon/20">
+                    class="w-full sm:w-auto rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-700 shadow-sm focus:border-maroon focus:outline-none focus:ring-2 focus:ring-maroon/20">
                     <option value="">Semua Kategori</option>
                     @foreach ($categories as $cat)
                         <option value="{{ $cat->id }}">{{ $cat->name }}</option>
@@ -109,7 +121,7 @@
 
             {{-- Book Grid --}}
             @if ($books->isNotEmpty())
-                <div class="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+                <div class="grid grid-cols-2 gap-3 sm:gap-5 sm:grid-cols-3 lg:grid-cols-4">
                     @foreach ($books as $i => $book)
                         <div class="group h-full [perspective:1000px]" x-data="{ flipped: false }"
                             data-aos="fade-up" data-aos-delay="{{ ($i % 4) * 75 }}">
@@ -150,7 +162,7 @@
                                     </div>
 
                                     {{-- Info --}}
-                                    <div class="flex flex-1 flex-col p-4">
+                                    <div class="flex flex-1 flex-col p-3 sm:p-4">
                                         <p class="mb-1 text-xs text-zinc-400">{{ $book->category?->name }}</p>
                                         <h3 class="line-clamp-2 text-sm font-semibold leading-snug text-ink">{{ $book->title }}</h3>
                                         <p class="mt-1 text-xs text-zinc-500">{{ $book->author }}</p>
@@ -228,15 +240,15 @@
     {{-- ===== PENGUMUMAN ===== --}}
     @if ($announcements->isNotEmpty())
         <section class="bg-zinc-50 py-20">
-            <div class="mx-auto max-w-7xl px-6">
-                <div class="mb-12 flex items-end justify-between" data-aos="fade-up">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6">
+                <div class="mb-8 sm:mb-12 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between" data-aos="fade-up">
                     <div>
                         <span class="mb-2 inline-block text-xs font-semibold uppercase tracking-widest text-brass">Info</span>
                         <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">Pengumuman</h2>
                         <p class="mt-2 text-zinc-500">Informasi terbaru dari perpustakaan</p>
                     </div>
                     <a href="{{ route('announcements.index') }}"
-                        class="hidden items-center gap-1 text-sm font-semibold text-maroon hover:underline sm:flex"
+                        class="flex items-center gap-1 text-sm font-semibold text-maroon hover:underline"
                         wire:navigate>
                         Lihat Semua
                         <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -245,7 +257,7 @@
                     </a>
                 </div>
 
-                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div class="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
                     @foreach ($announcements as $i => $ann)
                         <article class="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                             data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
@@ -273,36 +285,30 @@
                     @endforeach
                 </div>
 
-                <div class="mt-8 text-center sm:hidden">
-                    <a href="{{ route('announcements.index') }}"
-                        class="inline-flex items-center gap-2 text-sm font-semibold text-maroon hover:underline"
-                        wire:navigate>
-                        Lihat Semua Pengumuman →
-                    </a>
-                </div>
+
             </div>
         </section>
     @endif
 
     {{-- ===== CTA SECTION ===== --}}
     <section class="py-20">
-        <div class="mx-auto max-w-3xl px-6 text-center" data-aos="fade-up">
-            <div class="rounded-3xl bg-gradient-to-br from-maroon to-[#4a1a1a] px-8 py-16 shadow-2xl">
-                <h2 class="font-display text-3xl font-bold text-paper md:text-4xl">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 text-center" data-aos="fade-up">
+            <div class="rounded-3xl bg-gradient-to-br from-maroon to-[#4a1a1a] px-5 py-10 sm:px-8 sm:py-16 shadow-2xl">
+                <h2 class="font-display text-2xl sm:text-3xl font-bold text-paper md:text-4xl">
                     Siap Mulai Membaca?
                 </h2>
                 <p class="mt-4 text-paper/70">
                     Bergabunglah dengan ribuan pembaca aktif dan nikmati akses ke koleksi buku pilihan kami.
                 </p>
                 @guest
-                    <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                    <div class="mt-6 sm:mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
                         <a href="{{ route('register') }}"
-                            class="inline-flex items-center gap-2 rounded-xl bg-brass px-8 py-3.5 font-semibold text-ink transition hover:bg-brass/90"
+                            class="inline-flex items-center justify-center gap-2 rounded-xl bg-brass px-6 py-3.5 text-sm sm:text-base font-semibold text-ink transition hover:bg-brass/90"
                             wire:navigate>
                             Daftar Gratis
                         </a>
                         <a href="{{ route('login') }}"
-                            class="inline-flex items-center gap-2 rounded-xl border border-paper/30 px-8 py-3.5 font-medium text-paper transition hover:bg-white/10"
+                            class="inline-flex items-center justify-center gap-2 rounded-xl border border-paper/30 px-6 py-3.5 text-sm sm:text-base font-medium text-paper transition hover:bg-white/10"
                             wire:navigate>
                             Masuk
                         </a>
