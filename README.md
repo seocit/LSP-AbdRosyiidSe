@@ -532,35 +532,8 @@ vendor/bin/pint --dirty
 vendor/bin/pint --test
 ```
 
----
 
-## 📊 Variabel Environment Lengkap
 
-| Variabel | Default | Deskripsi |
-|---|---|---|
-| `APP_NAME` | `Laravel` | Nama aplikasi |
-| `APP_ENV` | `local` | Environment (`local`/`production`) |
-| `APP_KEY` | *(kosong)* | Kunci enkripsi (di-generate otomatis) |
-| `APP_DEBUG` | `true` | Mode debug |
-| `APP_URL` | `http://localhost` | URL aplikasi |
-| `DB_CONNECTION` | `sqlite` | Driver database |
-| `DB_HOST` | `127.0.0.1` | Host database (MySQL) |
-| `DB_PORT` | `3306` | Port database (MySQL) |
-| `DB_DATABASE` | *(nama db)* | Nama database |
-| `DB_USERNAME` | `root` | Username database |
-| `DB_PASSWORD` | *(kosong)* | Password database |
-| `SESSION_DRIVER` | `database` | Driver session |
-| `QUEUE_CONNECTION` | `database` | Driver queue |
-| `CACHE_STORE` | `database` | Driver cache |
-| `MAIL_MAILER` | `log` | Driver email |
-
----
-
-## 📜 Lisensi
-
-Proyek ini dilisensikan di bawah [MIT License](https://opensource.org/licenses/MIT).
-
----
 
 <div align="center">
   <p>Dibuat dengan ❤️ menggunakan <strong>Laravel</strong> + <strong>Livewire</strong></p>
