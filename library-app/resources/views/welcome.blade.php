@@ -12,7 +12,7 @@
             {{-- Dark Overlay for readability --}}
             <div class="absolute inset-0 bg-black/60"></div>
             {{-- Gradient overlay for styling matching theme --}}
-            <div class="absolute inset-0 bg-gradient-to-br from-maroon/70 to-[#4a1a1a]/70"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-maroon/50 to-[#4a1a1a]/10"></div>
         </div>
 
         {{-- Decorative background --}}
