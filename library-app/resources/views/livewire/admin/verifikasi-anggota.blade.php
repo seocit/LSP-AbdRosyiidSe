@@ -136,7 +136,7 @@
                 Apakah kamu yakin ingin menolak pendaftaran akun
                 <span class="font-semibold text-zinc-900 dark:text-white">
                     {{ $selectedUserForRejection?->name }}
-                </span>?
+                </span>
             </p>
         </div>
 

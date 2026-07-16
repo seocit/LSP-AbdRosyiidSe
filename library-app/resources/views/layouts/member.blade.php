@@ -70,7 +70,28 @@
                             </button>
 
                             <div x-show="open" x-cloak @click.outside="open = false"
-                                class="absolute right-0 mt-2 w-48 rounded-xl border border-zinc-200 bg-white py-1 shadow-lg">
+                                class="absolute right-0 mt-2 w-56 rounded-xl border border-zinc-200 bg-white py-1 shadow-lg">
+                                @unless(auth()->user()->hasRole('admin'))
+                                    <div class="px-4 py-2 text-xs text-zinc-500 border-b border-zinc-100 mb-1">
+                                        <span class="block mb-1">Status Verifikasi:</span>
+                                        @if(auth()->user()->status === 'verified' || auth()->user()->status === 'approved')
+                                            <span class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-1 text-xs font-semibold text-emerald-600">
+                                                <svg class="size-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                                Diterima
+                                            </span>
+                                        @elseif(auth()->user()->status === 'pending')
+                                            <span class="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-1 text-xs font-semibold text-amber-600">
+                                                <svg class="size-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                                Pending
+                                            </span>
+                                        @else
+                                            <span class="inline-flex items-center gap-1 rounded-full bg-red-50 px-2 py-1 text-xs font-semibold text-red-600">
+                                                <svg class="size-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                                                Ditolak
+                                            </span>
+                                        @endif
+                                    </div>
+                                @endunless
                                 @role('anggota')
                                     <a href="{{ route('member.profile') }}"
                                         class="flex items-center gap-2 px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-50"
@@ -125,6 +146,27 @@
                             Beranda
                         </a>
                         @auth
+                            @unless(auth()->user()->hasRole('admin'))
+                                <div class="px-3 py-2.5 text-sm text-paper/80 border-b border-white/10 mb-1">
+                                    <span class="block mb-1">Status Verifikasi:</span>
+                                    @if(auth()->user()->status === 'verified' || auth()->user()->status === 'approved')
+                                        <span class="inline-flex items-center gap-1 rounded-full bg-emerald-500/20 px-2.5 py-1 text-xs font-semibold text-emerald-300">
+                                            <svg class="size-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                            Diterima
+                                        </span>
+                                    @elseif(auth()->user()->status === 'pending')
+                                        <span class="inline-flex items-center gap-1 rounded-full bg-amber-500/20 px-2.5 py-1 text-xs font-semibold text-amber-300">
+                                            <svg class="size-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                            Pending
+                                        </span>
+                                    @else
+                                        <span class="inline-flex items-center gap-1 rounded-full bg-red-500/20 px-2.5 py-1 text-xs font-semibold text-red-300">
+                                            <svg class="size-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                                            Ditolak
+                                        </span>
+                                    @endif
+                                </div>
+                            @endunless
                             @role('anggota')
                                 <a href="{{ route('member.peminjaman') }}" class="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-paper/80 hover:bg-white/10" wire:navigate>
                                     <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg>
