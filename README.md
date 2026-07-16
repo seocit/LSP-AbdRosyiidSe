@@ -212,7 +212,7 @@ Berikut adalah variabel environment penting di file `.env`:
 # ========================
 # Konfigurasi Aplikasi
 # ========================
-APP_NAME="Sistem Reservasi Perpustakaan"
+APP_NAME="NoireeLibrary"
 APP_ENV=local          # local | staging | production
 APP_KEY=               # Di-generate otomatis oleh artisan key:generate
 APP_DEBUG=true         # Ubah ke false di production
